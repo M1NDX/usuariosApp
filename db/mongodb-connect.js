@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-let user = "dbUser";
-let password = "testUser";
+let user =  process.env.MONGODB_USER//"dbUser";
+let password = process.env.MONGODB_PASSWORD//"testUser";
 let dbName = "dbUsers";
 const dbUrl = `mongodb+srv://${user}:${password}@cluster0-h9l6a.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
