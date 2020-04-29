@@ -1,0 +1,39 @@
+
+@host = http://localhost:3001
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJkQGQiLCJpYXQiOjE1ODc5NjM3NDksImV4cCI6MTU4Nzk2NzM0OX0.6rA5wZK4lxGqKCWsnpqyse7_0qhZkayZKSrahAAPijM
+####
+GET http://localhost:3001/api/users/d@d
+x-auth: {{token}}
+###
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "nombre":"td",
+    "apellido": "ad",
+    "correo":"d@d",
+    "pass":"321",
+    "sexo":"H"
+}
+###
+
+PUT http://localhost:3001/api/users/b@b
+Content-Type: application/json
+
+{
+    "nombre":"tc",
+    "apellido": "ac",
+    "correo":"c@c",
+    "pass":"345",
+    "sexo":"H"
+}
+
+###
+
+POST {{host}}/api/login
+Content-Type: application/json
+
+{
+    "correo":"d@d",
+    "pass":"321"
+}
